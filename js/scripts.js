@@ -38,6 +38,13 @@ $(document).ready(function() {
     var multiresult = multiply(multInput1, multInput2);
     $("#multiout").text(multiresult);
   });
+  $("form#divide").submit(function(event){
+    event.preventDefault();
+    var divInput1 = parseInt($("#div1").val());
+    var divInput2 = parseInt($("#div2").val());
+    var divresult = divide(divInput1, divInput2);
+    $("#divout").text(divresult);
+  });
 
 
 });
