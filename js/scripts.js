@@ -11,11 +11,16 @@ var divide = function(num1, num2) {
   return num1 / num2;
 };
 
+$(document).ready(function() {
+  $("form#add").submit(function(event){
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var addresult = add(number1, number2);
+    var subresult = subtract(number1, number2);
+    var multresult = multiply(number1, number2);
+    var divresult = divide(number1, number2);
+    $("#output").text(addresult);
+  });
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var addresult = add(number1, number2);
-var subresult = subtract(number1, number2);
-var multresult = multiply(number1, number2);
-var divresult = divide(number1, number2);
-alert('Add:'+addresult+' Subtract:'+subresult+' Multiply:'+multresult+' Divide:'+divresult);
+});
